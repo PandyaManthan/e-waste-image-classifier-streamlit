@@ -1,15 +1,11 @@
 from __future__ import annotations
 
 import json
-import os
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import streamlit as st
-
-# Needed for loading older TensorFlow/Keras-saved models (common in notebooks).
-os.environ.setdefault("TF_USE_LEGACY_KERAS", "1")
 
 import tensorflow as tf
 from PIL import Image
