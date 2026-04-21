@@ -81,10 +81,14 @@ def get_available_model_path() -> Path | None:
 
 def load_class_names() -> list[str]:
     if CLASS_NAMES_PATH.exists():
-        with open(CLASS_NAMES_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        if isinstance(data, list) and all(isinstance(x, str) for x in data):
-            return data
+        try:
+            with open(CLASS_NAMES_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, list) and all(isinstance(x, str) for x in data):
+                return data
+        except json.JSONDecodeError:
+            # Fall back safely if labels file gets corrupted by merge conflicts.
+            pass
 
     if TRAIN_DIR.exists():
         return sorted([p.name for p in TRAIN_DIR.iterdir() if p.is_dir()])

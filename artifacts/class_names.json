@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [
   "Battery",
   "Keyboard",
@@ -10,17 +9,4 @@
   "Printer",
   "Television",
   "Washing Machine"
-=======
-[
-  "Battery",
-  "Keyboard",
-  "Microwave",
-  "Mobile",
-  "Mouse",
-  "PCB",
-  "Player",
-  "Printer",
-  "Television",
-  "Washing Machine"
->>>>>>> f4d5d19cb6eb548e537ea34dbedc0489cab3e967
 ]
