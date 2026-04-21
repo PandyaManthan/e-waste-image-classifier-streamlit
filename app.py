@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import os
 from pathlib import Path
@@ -113,8 +115,8 @@ def preprocess_image(image: Image.Image) -> np.ndarray:
     return np.expand_dims(arr, axis=0)
 
 
-def model_has_rescaling_layer(model: tf.keras.Model) -> bool:
-    def _walk_layers(current_model: tf.keras.Model):
+def model_has_rescaling_layer(model) -> bool:
+    def _walk_layers(current_model):
         for layer in current_model.layers:
             yield layer
             if isinstance(layer, tf.keras.Model):
