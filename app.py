@@ -105,7 +105,7 @@ def load_model():
     errors: list[str] = []
     for model_path in available_paths:
         try:
-            model = tf.keras.models.load_model(model_path)
+            model = tf.keras.models.load_model(model_path, compile=False)
             return model, model_path, None
         except Exception as exc:
             errors.append(f"{model_path.name}: {exc}")
