@@ -1,6 +1,7 @@
-streamlit
-tensorflow
-tf_keras
-numpy
-pandas
-Pillow
+streamlit==1.36.0
+# Streamlit Community Cloud is Linux; pin TF to a stable wheel.
+# TF 2.15 is broadly compatible and avoids Keras 3 deserialization issues.
+tensorflow==2.15.1
+numpy<2
+pandas==2.2.2
+Pillow==10.4.0
